@@ -20,7 +20,7 @@ const MessageForm = (props) => {
     isTyping(props, chatId);
   };
   const handleUpload=(event)=>{
-      sendMessage(creds,chatId,{files:event.target.value,text:''});
+      sendMessage(creds,chatId,{files:event.target.files,text:''});
 
   };
   return (
@@ -45,6 +45,9 @@ const MessageForm = (props) => {
         style={{ display: "none" }}
         onChange={handleUpload}
       />
+      <button type="submit" className="send-button">
+        <SendOutlined className="send-icon" />
+      </button>
     </form>
   );
 };
